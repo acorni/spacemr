@@ -4,7 +4,7 @@ SpaceMR - java/javascript application to track student presence in University sp
 
 [TOC]
 
-## introduction in English
+## Introduction
 
 This application has been developed and
 is used in my University to track presences during lessons
@@ -29,19 +29,19 @@ all the user displayed strings are stored in a json file:
   src/main/resources/language/language_it.json
 
 
-## Introduzione Italiano
+## Introduzione
 
 Questa applicazione e' stata sviluppata ed usata
-nell'Ateneo per tracciare le presenze
-e nel dipartimento universitario in cui lavoro
+all'Universita' degli studi di Modena e Reggio Emilia per tracciare le presenze
+e nel dipartimento universitario in cui lavoro (DIEF)
 per prenotare gli spazi (studi, laboratori, etc.) durante l'emergenza covid19.
 
- * [2 minutes of demo - navigare le presenze](https://web.ing.unimo.it/~corni/shared/20210421%20-%20spacemr%20-%20presenze%20-%20come%20navigare%20le%20presenze%20per%20e%20spazi%20e%20data.ogv)
+ * [2 minuti di demo - navigare le presenze](https://web.ing.unimo.it/~corni/shared/20210421%20-%20spacemr%20-%20presenze%20-%20come%20navigare%20le%20presenze%20per%20e%20spazi%20e%20data.ogv)
  * [3 minuti di demo - prenotare spazi](http://web.ing.unimo.it/~corni/shared/20200625%20-%20spacemr%20-%20demo%20prenotazioni.ogv)
 
 Funzionalita' principali:
 
- * mosttra presenze e prenotazioni sia sulla mappa sia sui calendari
+ * mostra presenze e prenotazioni sia sulla mappa sia sui calendari
  * le presenze possono generare un "pass" (bage) giornaliero per i controlli d'accesso all'edificio
  * creazione veloce della prenotazione facendo click sul nome della persona o del laboratorio sulla mappa
  * le mappe vengono create e modificate via browser (editor di mappe integrato)
@@ -81,7 +81,7 @@ Requirements
  * get [git](https://git-scm.com/)
  * other, a good editor, a browser, many time and patience
 
-on debian 10 burst
+on debian 10 burst (and may be Ubuntu)
 
     sudo apt-get install \
         git default-jdk gradle mariadb-server
