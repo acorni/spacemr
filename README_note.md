@@ -1,11 +1,24 @@
 [TOC]
 
+This file contains a set of utility code collected during the application usage.
 
 ## links
  * test-me
     markdown README_note.md > README_note.html
     markdown_py -x toc  README_note.md > README_note.html
     firefox README_note.html
+
+
+## Developing javascript while  "gradle run"
+
+because of the separation of "build" static resources from "src" static resource
+to speed up the the development of the javascript client,
+I edit the "build" code,
+and then I rsync it back to src
+like this
+
+       cd ...../spacemr; rsync -c --recursive --links --owner --times --group --perms --progress --stats --partial build/resources/main/static src/main/resources
+
 
 ## Persone LDAP search, importa la configurazione di un utente da LDAP
 [Al 20180704-19:10] per abilitare la ricerca LDAP occorre:
@@ -355,7 +368,7 @@
 
 
 ## Application custom "about" text
-Custom html text can be addede in the top of the about page
+Custom html text can be added in the top of the about page
 by editing the system properties
  app_about_custom
 

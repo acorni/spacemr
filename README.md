@@ -89,9 +89,9 @@ on debian 10 burst
 start the application from sources
 
  * get the soruces
- 
+
          git clone whatsever/is/the/path/spacemr
-   
+
    the following path are relative to the dir spacemr
 
  * configure your DB connection
@@ -101,14 +101,14 @@ start the application from sources
 
  * connect to mariadb and create an empty db
    and a user with rights to write such db:
-   
+
          mysql -u root
          create database tomcatspacemr;
          grant all on tomcatspacemr.* to tomcatspacemr@localhost identified by 'tomcatspacemrp';
          \q
 
  * run your local instance of the application
- 
+
        gradle bootRun
 
    this will create all db tables and will
@@ -116,16 +116,16 @@ start the application from sources
 
  * connect for the first time to the development application,
    open the url
-   
+
         http://localhost:8080/
- 
+
    and login with the credentials
-   
+
         root / approot
 
 
  * create the "war" for deploying the application
-   
+
         gradle war
         ls -las build/libs/spacemr.war
 
@@ -163,35 +163,35 @@ steps
    in the webapps directory of tomcat.
 
    On debian 10 burst
-  
+
          gradle war
          scp build/libs/spacemr.war root@your.spacemr.server:/var/lib/tomcat9/webapps
 
    or
-         
+
          ssh root@your.spacemr.server
          cd /var/lib/tomcat9/webapps
          wget https://web.ing.unimo.it/~corni/shared/spacemr.war
 
  * the application will respond at the url
-   
+
         http://your.spacemr.server:8080/spacemr
- 
+
    and login with the credentials
-   
+
         root / approot
 
  * create the documentation directory,
- 
+
         mkdir /var/lib/tomcat9/webapps/spacemr_demo_data/docs
         chown tomcat:tomcat /var/lib/tomcat9/webapps/spacemr_demo_data/docs
-      
+
     and edit the system property by the web interface (Menu / Elenco proprieta di sistema)
-    
+
         configuration_docs_directory
 
     or by sql
- 
+
        update app_system_property set value =
           '/var/lib/tomcat9/webapps/spacemr_demo_data/docs'
          where name = 'configuration_docs_directory';
@@ -205,3 +205,18 @@ so please contact me at
 
      alberto.corni at unimore.it
 
+Things I would like to learn to do:
+
+  * separate library, auto generation code from production/application repository.
+
+    E.g. The application is able to generate code to "edit" a new Database table.
+
+           gradle bootRun -Pargs="toolDb describeTable spacemr_space spacemr_space"
+
+    But it should be done in production only.
+
+    Also there is a "library" for javascript
+
+            src/main/resources/static/js/app_initialization.js
+
+    that should be separated along with the "mattoni" management.
