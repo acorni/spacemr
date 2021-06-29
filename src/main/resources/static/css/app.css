@@ -1,0 +1,129 @@
+/* application custom CSS */
+
+#app_messages {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    width: 50%;
+    background-color: white;
+    border-radius: 9px;
+    padding: 11px;
+    border-color: black;
+    border-style: solid;
+    display: none;
+}
+
+#app-main-container {
+    min-width:400px;
+}
+
+
+.app_main_menu_canvas {
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    position: fixed;
+    z-index: 3;
+    overflow-x: hidden;
+    transition: .5s;
+    padding-top: 60px;
+}
+.app_main_menu_canvas a {
+    padding: 8px 8px 8px 20px;
+    text-decoration: none !important;
+    /* font-size: 18px; */
+    color: #818181;
+    display: block;
+    transition: .3s
+}
+.app_main_menu_canvas div {
+    padding: 8px 8px 8px 15px;
+    font-weight: bold;
+    text-decoration: none !important;
+    /* font-size: 21px; */
+    color: #999999;
+    display: block;
+    transition: .3s
+}
+.app_main_menu_canvas span:hover, .app_main_menu_canvas a:hover, .app_main_menu_canvas span:focus{
+    color: #f1f1f1;
+}
+
+.app_main_menu_canvas_close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 50px;
+    color: #818181;
+}
+
+@media screen and (max-height: 500px) {
+  .app_main_menu_canvas {padding-top:15px;}
+  .app_main_menu_canvas a {font-size: 18px;}
+}
+
+.app_main_menu_canvas_overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left:0;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    opacity:0;
+    transition: opacity 1s;
+}
+
+.sidenav5 {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+}
+
+.sidenav5 a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+
+}
+
+.sidenav5 a:hover{
+    color: #f1f1f1;
+}
+
+.sidenav5 .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav5 {padding-top: 15px;}
+  .sidenav5 a {font-size: 18px;}
+}
+
+#app_tooltip {
+  background: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}

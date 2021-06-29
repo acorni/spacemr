@@ -1,0 +1,6 @@
+{"data_source": {
+  "password": "tomcatspacemrp",
+  "driverclass": "org.gjt.mm.mysql.Driver",
+  "url": "jdbc:mysql://127.0.0.1:3306/tomcatspacemr",
+  "username": "tomcatspacemr"
+}}

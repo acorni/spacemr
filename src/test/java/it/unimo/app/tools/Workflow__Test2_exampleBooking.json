@@ -1,0 +1,181 @@
+{
+    'defaultStatus': 'richiesta'
+    , 'defaultSearchStatuses': ['richiesta', 'verificata', 'autorizzata', 'riformulare']
+    , 'default_per_field_permisson': {
+        'spacemr_people_id':            { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'spacemr_people_username':   { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'spacemr_people_first_name': { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'spacemr_people_last_name':  { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'spacemr_people_role':       { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'spacemr_responsible_id': { 'default':'ro', 'rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'spacemr_responsible_username':   { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'spacemr_responsible_first_name': { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'spacemr_responsible_last_name':  { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'spacemr_responsible_role':       { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'spacemr_space_id':     { 'default':'ro', 'rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'spacemr_space_code':   { 'default':'ro', 'rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'reason':        { 'default':'ro', 'rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'date_from':     { 'default':'ro', 'rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'date_to':       { 'default':'ro', 'rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'repetition':    { 'default':'ro', 'rw': 'db_spacemr_space_people_book_admin_update'}
+        , 'people_number': { 'default':'ro', 'rw': 'db_spacemr_space_people_book_admin_update'}
+    }
+    , statuses: [
+        {
+            'name':'richiesta'
+            , 'color':'#66ccff'
+            , 'description':'Richiesta in approvazione'
+            , 'steps':[
+                {
+                    'destination':'autorizzata'
+                    , 'description':'Autorizza la richiesta'
+                    , 'permission':'db_spacemr_space_people_book_responsible'
+                    , 'actions': [ "spacemr_space_people_book:workflow_write_notifica" ]
+                }
+                , {
+                    'destination':'verificata'
+                    , 'description':'Richiesta verificata'
+                    , 'permission':'db_spacemr_space_people_book_verifier'
+                }
+                , {
+                    'destination':'annullata'
+                    , 'description':'Richiesta annullata'
+                    , 'permission':'db_spacemr_space_people_book_update'
+                    , 'actions': [ "spacemr_space_people_book:workflow_write_notifica" ]
+                }
+                , {
+                    'destination':'riformulare'
+                    , 'description':'Richiesta non autorizzata'
+                    , 'permission':'db_spacemr_space_people_book_verifier'
+                    , 'actions': [ "spacemr_space_people_book:workflow_write_notifica" ]
+                }
+            ]
+            , 'per_field_permisson': {
+                'spacemr_people_id':  { 'default':'rw'}
+                , 'spacemr_people_username':   { 'default':'rw'}
+                , 'spacemr_people_first_name': { 'default':'rw'}
+                , 'spacemr_people_last_name':  { 'default':'rw'}
+                , 'spacemr_people_role':       { 'default':'rw'}
+                , 'spacemr_responsible_id':         { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+                , 'spacemr_responsible_username':   { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+                , 'spacemr_responsible_first_name': { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+                , 'spacemr_responsible_last_name':  { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+                , 'spacemr_responsible_role':       { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+                , 'spacemr_space_id':     { 'default':'rw'}
+                , 'spacemr_space_code':   { 'default':'rw'}
+                , 'reason':        { 'default':'rw'}
+                , 'date_from':     { 'default':'rw'}
+                , 'date_to':       { 'default':'rw'}
+                , 'repetition':    { 'default':'rw'}
+                , 'people_number': { 'default':'rw'}
+            }
+        }
+        , {
+            'name':'verificata'
+            , 'color':'#e5fc62'
+            , 'description':'Richiesta verificata'
+            , 'steps':[
+                {
+                    'destination':'autorizzata'
+                    , 'description':'Autorizza la richiesta'
+                    , 'permission':'db_spacemr_space_people_book_responsible'
+                    , 'actions': [ "spacemr_space_people_book:workflow_write_notifica" ]
+                }
+                , {
+                    'destination':'riformulare'
+                    , 'description':'Richiesta non autorizzata'
+                    , 'permission':'db_spacemr_space_people_book_verifier'
+                    , 'actions': [ "spacemr_space_people_book:workflow_write_notifica" ]
+                }
+                , {
+                    'destination':'annullata'
+                    , 'description':'Richiesta annullata'
+                    , 'permission':'db_spacemr_space_people_book_update'
+                    , 'actions': [ "spacemr_space_people_book:workflow_write_notifica" ]
+                }
+            ]
+        }
+        , {
+            'name':'autorizzata'
+            , 'color':'#00FF00'
+            , 'description':'Richiesta autorizzata'
+            , 'steps':[
+                {
+                    'destination':'annullata'
+                    , 'description':'Richiesta annullata'
+                    , 'permission':'db_spacemr_space_people_book_update'
+                    , 'actions': [ "spacemr_space_people_book:workflow_write_notifica" ]
+                }
+                , {
+                    'destination':'riformulare'
+                    , 'description':'Richiesta non autorizzata'
+                    , 'permission':'db_spacemr_space_people_book_verifier'
+                    , 'actions': [ "spacemr_space_people_book:workflow_write_notifica" ]
+                }
+            ]
+        }
+        , {
+            'name':'riformulare'
+            , 'color':'#ffae00'
+            , 'description':'Riformulare la richesta'
+            , 'steps':[
+                {
+                    'destination':'annullata'
+                    , 'description':'Richiesta annullata'
+                    , 'permission':'db_spacemr_space_people_book_update'
+                }
+                , {
+                    'destination':'richiesta'
+                    , 'description':'Invia richiesta'
+                    , 'permission':'db_spacemr_space_people_book_update'
+                }
+            ]
+            , 'per_field_permisson': {
+                'spacemr_people_id':  { 'default':'rw'}
+                , 'spacemr_people_username':   { 'default':'rw'}
+                , 'spacemr_people_first_name': { 'default':'rw'}
+                , 'spacemr_people_last_name':  { 'default':'rw'}
+                , 'spacemr_people_role':       { 'default':'rw'}
+                , 'spacemr_responsible_id':         { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+                , 'spacemr_responsible_username':   { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+                , 'spacemr_responsible_first_name': { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+                , 'spacemr_responsible_last_name':  { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+                , 'spacemr_responsible_role':       { 'default':'ro','rw': 'db_spacemr_space_people_book_admin_update'}
+                , 'spacemr_space_id':     { 'default':'rw'}
+                , 'spacemr_space_code':   { 'default':'rw'}
+                , 'reason':        { 'default':'rw'}
+                , 'date_from':     { 'default':'rw'}
+                , 'date_to':       { 'default':'rw'}
+                , 'repetition':    { 'default':'rw'}
+                , 'people_number': { 'default':'rw'}
+            }
+        }
+        , {
+            'name':'annullata'
+            , 'color':'#707070'
+            , 'description':'Richiesta annullata'
+            , 'steps':[
+                {
+                    'destination':'riformulare'
+                    , 'description':'Richiesta non autorizzata'
+                    , 'permission':'db_spacemr_space_people_book_verifier'
+                }
+            ]
+        }
+    ]
+    , 'aux': {
+        'bookers_roles' : ['COLLABORATORE IN SPIN OFF'
+                             , 'Personale tecnico amministrativo'
+                             , 'Professore Associato'
+                             , 'PROFESSORE EMERITO'
+                             , 'PROFESSORE FUORI RUOLO Esterno'
+                             , 'Professore Ordinario'
+                             , 'Ricercatore Legge 240/10 - t.det.'
+                             , 'Ricercatore Universitario'
+                             , 'SENIOR PROFESSOR'
+                             , 'VISITING PROFESSOR'
+                             , 'DOCENTE A CONTRATTO'
+                            ]
+        , 'bookings_counted_statuses': ['richiesta', 'verificata', 'autorizzata']
+    }
+}

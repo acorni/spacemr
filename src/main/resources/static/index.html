@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/w3.css" rel="stylesheet" type="text/css" />
+    <link href="css/w3-theme-deep-orange.css" rel="stylesheet" type="text/css" />
+    <link href="css/pikaday_1.6.1.css" rel="stylesheet" type="text/css" />
+    <title>Applicazione - inizializzazione...</title>
+    <link rel="shortcut icon" href="./favicon.ico">
+    <script src="./js/jquery-2.2.4.js"></script>
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="./js/json2.js"></script>
+    <script src="./js/jquery.number.js"></script>
+    <script src="./js/moment_2.21.0.js"></script>
+    <script src="./locale/it.js"></script>
+    <script src="./js/pikaday_1.6.1.js"></script>
+    <script src="./js/pikaday.jquery_1.6.1.js"></script>
+    <script src="./js/app_icons.js"></script>
+    <script src="./js/app_initialization.js"></script>
+    <script src="./js/app_configuration.js"></script>
+    <script src="./js/app_app_user.js"></script>
+    <script src="./js/app_app_login.js"></script>
+    <script src="./js/app_app_system.js"></script>
+    <script src="./js/app_app_file.js"></script>
+    <script src="./js/app_test.js"></script>
+    <script src="./js/app_spacemr_people.js"></script>
+    <script src="./js/app_spacemr_space.js"></script>
+    <script src="./js/app_spacemr_space_people.js"></script>
+    <script src="./js/app_spacemr_toolsqueries.js"></script>
+    <script src="./js/app_spacemr_inventario.js"></script>
+    <script src="./js/app_spacemr_space_map.js"></script>
+    <script src="./js/app_spacemr_space_people_book.js"></script>
+    <script src="./js/app_app_notifica.js"></script>
+    <script src="./js/app_spacemr_space_user_presence.js"></script>
+    <script src="./js/qrcode.min.js"></script>
+    <script src="./js/s.js"></script>
+    <!-- 
+     -->
+  </head>
+  <body class="w3-theme-l5">
+
+  <div id="app_main_menu_canvasOff" class="app_main_menu_canvas_overlay" onclick="app_main_menu_canvasOff_close()"></div>
+  <div id="app_main_menu_canvas" class="app_main_menu_canvas"></div>
+
+    
+    <div class="app-main-container" >
+      <div class="w3-bar w3-large w3-theme-d4">
+        <span id="app_main_menu_button" class="w3-bar-item w3-left">Menu</span>
+        <span class="w3-bar-item" id="app_header_title">Applicazione - inizializzazione...</span>
+        <span class="w3-bar-item w3-right" id="app_login_area">login</span>
+      </div>
+      <div id="app_messages">message area</div>
+      <!-- /header -->
+      <div id="app_first_login_note" data-role="content" class=""></div>
+      <div id="app_pagecontent" data-role="content" class="">
+      </div>
+      <div id="app_pagecontent_login" class="">
+        <form name="app_fm_login" id="id_app_fm_login" action="app_user/app_user_login"
+              method="post"
+              onsubmit="$('#id_app_url').val(window.location.href);">
+          <div class="w3-container w3-content" style="width: 98%;">
+            <div class="w3-panel w3-white w3-card-4 w3-round">
+              <p>
+                <label id="id_user_name_label" for="id_user_name">user</label>
+                <input class="w3-input w3-border w3-round"
+                       type="text"
+                       name="user_name" id="id_user_name"></p>
+              <p>
+                <label id="id_password_label" for="id_password">password</label>
+                <input class="w3-input w3-border
+                              w3-round" type="password" name="password"
+                       id="id_password"></p>
+              <p><input class="w3-btn w3-padding w3-light-grey w3-round"
+                         type="submit" value="login"
+                         id="id_log_in_button"></input></p></div></div>
+          <input type="hidden" name="app_url" id="id_app_url"></input>
+        </form>
+      </div>
+      <div data-role="footer" class="">
+        <div id="app_log"></div>
+      </div>
+      <script type="text/javascript" language="javascript">
+	<!--
+	$(document).ready(function() { app_initialization_doInitialize(); });
+	-->
+      </script>
+    </div>
+    <div id="app_tooltip" display="none" style="position: absolute; display: none;"></div>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+/.gradle
+/TAGS
+/build
+/classpath.txt
+/gradle
+/out.json
+/tmp
+/trash.txt
+/docs/tmp
+/app_data/docs
+/dbDir
+/0note.html
+/README.html
+/app_data/app_data/*

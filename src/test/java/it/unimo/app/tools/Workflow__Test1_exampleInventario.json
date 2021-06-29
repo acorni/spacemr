@@ -1,0 +1,101 @@
+ {
+     "defaultStatus": "da_controllare"
+     , "default_per_field_permisson": {
+         "fg_validato":  { "default":"ro", "rw": "db_spacemr_inventario_wf_admin"}
+         , "codice_inventario_unimore": { "default":"hidden"}
+         , "inventario_numero":   { "default":"hidden"}
+         , "inventario_numero_sub":   { "default":"hidden"}
+         , "inventario_etichetta":   { "default":"ro"}
+         , "tipo_carico_scarico":   { "default":"hidden"}
+         , "carico_data":     { "default":"ro"}
+         , "attivita_tipo":   { "default":"hidden"}
+         , "categoria_inventario":   { "default":"hidden"}
+         , "valore":      { "default":"hidden"}
+         , "fornitore":   { "default":"hidden"}
+         , "scarico_numero_buono":   { "default":"hidden"}
+         , "scarico_data":   { "default":"ro"}
+         , "old_values":   { "default":"hidden"}
+         , "note":         { "default":"rw"}
+         , "old_values_changes":   { "default":"hidden", "ro": "db_spacemr_inventario_wf_admin"}
+     }
+     , statuses: [
+         {
+             "name":"da_controllare"
+             , "color":"#B0B0B0"
+             , "description": "Da controllare"
+             , "steps":[
+                 {
+                     "destination":"smaltito"
+                     , "description":"Bene smaltito"
+                     , "permission":"db_spacemr_inventario_wf_user"
+                 }
+                 , {
+                     "destination":"trovato"
+                     , "description":"Bene trovato"
+                     , "permission":"db_spacemr_inventario_wf_user"
+                 }
+                 , {
+                     "destination":"in_altra_struttura"
+                     , "description":"Bene in altra struttura"
+                     , "permission":"db_spacemr_inventario_wf_user"
+                 }
+                 , {
+                     "destination":"da_smaltire"
+                     , "description":"Bene da smaltire"
+                     , "permission":"db_spacemr_inventario_wf_user"
+                 }
+             ]
+             , "per_field_permisson": {
+                 "fornitore":   { "default":"ro", "rw": "db_spacemr_inventario_wf_admin"}
+             }
+         }
+         , {
+             "name":"smaltito"
+             , "color":"#0000C0"
+             , "description":"Bene smaltito"
+             , "steps":[
+                 {
+                     "destination":"da_controllare"
+                     , "description":"Imposta come Da Controllare"
+                     , "permission":"db_spacemr_inventario_wf_admin"
+                 }
+             ]
+         }
+         , {
+             "name":"trovato"
+             , "color":"#10FF10"
+             , "description":"Bene trovato e correttamente assegnato"
+             , "steps":[
+                 {
+                     "destination":"da_controllare"
+                     , "description":"Imposta come Da Controllare"
+                     , "permission":"db_spacemr_inventario_wf_admin"
+                 }
+             ]
+         }
+         , {
+             "name":"in_altra_struttura"
+             , "color":"#10ffda"
+             , "description":"Bene segnalato come in altra struttura/spazio"
+             , "steps":[
+                 {
+                     "destination":"da_controllare"
+                     , "description":"Imposta come Da Controllare"
+                     , "permission":"db_spacemr_inventario_wf_admin"
+                 }
+             ]
+         }
+         , {
+             "name":"da_smaltire"
+             , "color":"#ffd510"
+             , "description":"Bene in corso di smaltimento"
+             , "steps":[
+                 {
+                     "destination":"da_controllare"
+                     , "description":"Imposta come Da Controllare"
+                     , "permission":"db_spacemr_inventario_wf_admin"
+                 }
+             ]
+         }
+     ]
+ }
