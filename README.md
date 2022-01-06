@@ -10,7 +10,7 @@ This application has been developed and
 is used in my University to track presences during lessons
 and in my Department to book spaces (offices, labs, etc.) during the covid19 emergency in italy.
 
- * [2 minutes of demo - how navigate presences](https://web.ing.unimo.it/~caorni/shared/20210421%20-%20spacemr%20-%20presenze%20-%20come%20navigare%20le%20presenze%20per%20e%20spazi%20e%20data.ogv)
+ * [2 minutes of demo - how navigate presences](https://web.ing.unimo.it/~acorni/shared/20210421%20-%20spacemr%20-%20presenze%20-%20come%20navigare%20le%20presenze%20per%20e%20spazi%20e%20data.ogv)
  * [3 minutes of demo - booking](http://web.ing.unimo.it/~acorni/shared/20200625%20-%20spacemr%20-%20demo%20prenotazioni.ogv)
 
 Main features are:
